@@ -2,18 +2,22 @@
   "name": "taco",
   "version": "1.0.0",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
+  "author": "YisusJuarez",
+  "license": "MIT",
   "scripts": {
-    "build": "taco-build"
+    "build": "node src/compiler.js",
+    "dev": "node src/devServer.js"
   },
   "bin": {
     "taco-build": "./src/compiler.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
   "description": "",
   "dependencies": {
+    "browser-sync": "^3.0.3",
+    "chokidar": "^4.0.3",
+    "express": "^4.21.2",
     "fs-extra": "^11.3.0"
   }
 }
