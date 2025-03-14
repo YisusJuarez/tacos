@@ -6,11 +6,11 @@
   "author": "YisusJuarez",
   "license": "MIT",
   "scripts": {
-    "build": "node src/scripts/build.js",
-    "dev": "node src/scripts/dev_server.js"
+    "build": "node scripts/build.js",
+    "dev": "node scripts/dev_server.js"
   },
   "bin": {
-    "taco-build": "./src/scripts/build.js"
+    "taco-build": "./scripts/build.js"
   },
   "keywords": [],
   "description": "",

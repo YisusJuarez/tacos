@@ -2,8 +2,8 @@ import express from 'express';
 import path from 'path';
 import chokidar from 'chokidar';
 import browserSync from 'browser-sync';
-import { modes } from '../constants';
-import { compileTCFile } from '../compiler.js';
+import { modes } from '../src/constants.js';
+import { compileTCFile } from '../src/compiler.js';
 
 // Start Express server
 const app = express();
