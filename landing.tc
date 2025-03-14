@@ -1,0 +1,4 @@
+page(title: "Mi Landing Taco", description: "Ejemplo de Taco para SEO", url: "https://mi-sitio.com")
+
+h1 Bienvenido a nuestra página Taco
+p Esta es una landing optimizada para SEO.
