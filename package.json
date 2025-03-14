@@ -4,10 +4,10 @@
   "main": "index.js",
   "type":"module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "taco-build"
   },
   "bin": {
-    "taco-build": "./compiler.js"
+    "taco-build": "./src/compiler.js"
   },
   "keywords": [],
   "author": "",
