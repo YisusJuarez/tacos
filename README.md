@@ -1,10 +1,10 @@
-# Taco Static Site Generator
+# Tacos Static Site Generator
 
-Taco is a simple Static Site Generator (SSG) that allows you to create static HTML pages from custom `.tc` files. It supports dynamic compilation and live reloading during development, making it easy to build and preview your static sites.
+Taco is a simple Static Site Generator (SSG) that allows you to create static HTML pages from custom `.taco` files. It supports dynamic compilation and live reloading during development, making it easy to build and preview your static sites.
 
 ## Features
 
-- **Dynamic Compilation**: Automatically compiles `.tc` files into HTML.
+- **Dynamic Compilation**: Automatically compiles `.taco` files into HTML.
 - **Live Reloading**: Uses BrowserSync to reload the browser when files change.
 - **SEO Optimization**: Supports metadata tags for better SEO.
 - **Custom Tags**: Easily define and use custom tags in your `.tc` files.
@@ -27,7 +27,7 @@ To start the development server with live reloading, run:
 npm run dev
 ```
 
-This will start an Express server and BrowserSync for live reloading. The server will dynamically compile the `.tc` files and serve the generated HTML.
+This will start an Express server and BrowserSync for live reloading. The server will dynamically compile the `.taco` files and serve the generated HTML.
 
 ### Build
 

@@ -7,14 +7,14 @@ import { headTags, tagHandlers } from "./tagHandlers.js";
 import { HTML_DEFAULT, HTML_DEFAULT_END, HTML_HEAD_END, HTML_BODY, HTML_BODY_END, modes } from "./constants.js";
 
 // Input and output paths
-const inputFile = path.join(process.cwd(), "landing.tc");
+const inputFile = path.join(process.cwd(), "landing.taco");
 const outputDir = path.join(process.cwd(), "dist");
 const outputFile = path.join(outputDir, "index.html");
 const publicDir = path.join(process.cwd(), "public");
 
 // Read and compile .tc file
 export const compileTCFile = (mode = modes.PRODUCTION) => {
-  console.log("🌮 Compiling .tc file...");
+  console.log("🌮 Compiling .taco file...");
   console.log(`📄 Input file: ${inputFile}`);
   
   let html = HTML_DEFAULT; // Start with a fresh HTML template
