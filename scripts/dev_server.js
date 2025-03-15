@@ -11,7 +11,7 @@ const port = 3000;
 
 // Directories
 const publicDir = path.join(process.cwd(), 'public');
-const inputFile = path.join(process.cwd(), 'landing.tc');
+const inputFile = path.join(process.cwd(), 'landing.taco');
 
 // Start BrowserSync for live reload
 const bs = browserSync.create();
@@ -19,7 +19,7 @@ const bs = browserSync.create();
 // Serve HTML dynamically instead of using files from `dist`
 app.get('/', (req, res) => {
   // Generate HTML dynamically each time the page is requested
-  const htmlContent = compileTCFile(modes.DEVELOPMENT); // Compile TC file dynamically
+  const htmlContent = compileTCFile(modes.DEVELOPMENT); // Compile .taco file dynamically
   res.send(htmlContent); // Serve the generated HTML content
 });
 
@@ -30,7 +30,7 @@ bs.init({
   port: 3000,
 });
 
-// Watch for changes in .tc file and public folder
+// Watch for changes in .taco file and public folder
 const watcher = chokidar.watch([inputFile, publicDir], {
   persistent: true,
   ignoreInitial: true,
@@ -40,7 +40,7 @@ const watcher = chokidar.watch([inputFile, publicDir], {
 // When there are changes, recompile and reload
 watcher.on('change', (path) => {
   console.log(`File changed: ${path}`);
-  bs.reload(); // Trigger reload after recompiling the TC file
+  bs.reload(); // Trigger reload after recompiling the .taco file
 });
 
 // Start the Express server

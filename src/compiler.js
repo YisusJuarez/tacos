@@ -12,7 +12,7 @@ const outputDir = path.join(process.cwd(), "dist");
 const outputFile = path.join(outputDir, "index.html");
 const publicDir = path.join(process.cwd(), "public");
 
-// Read and compile .tc file
+// Read and compile .taco file
 export const compileTCFile = (mode = modes.PRODUCTION) => {
   console.log("🌮 Compiling .taco file...");
   console.log(`📄 Input file: ${inputFile}`);
@@ -23,7 +23,7 @@ export const compileTCFile = (mode = modes.PRODUCTION) => {
   const content = readTacoFile(inputFile);
   const lines = content.split("\n").map((line) => line.trim());
 
-  // Compile the content of the .tc file
+  // Compile the content of the .taco file
   const compileLine = (line) => {
     if (inHead) {
       const isHeaderTag = Object.keys(headTags).find((tag) =>

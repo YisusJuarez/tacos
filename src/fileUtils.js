@@ -12,7 +12,7 @@ export function ensureOutputDir(outputDir) {
   fs.ensureDirSync(outputDir);
 }
 
-// Read taco file (.tc)
+// Read taco file (.taco)
 export function readTacoFile(inputFile) {
   return fs.readFileSync(inputFile, "utf-8");
 }
