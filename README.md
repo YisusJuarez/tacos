@@ -44,14 +44,10 @@ This will compile the `.taco` files and output the static HTML files to the `dis
 Here is an example of a `.taco` file:
 
 ```plaintext
-page[title: "Mi Landing Taco", description: "Ejemplo de Taco para SEO", url: "https://mi-sitio.com"]
+page[title: "Mi Landing Taco", description: "Ejemplo de Tacos para SEO", url: "https://mi-sitio.com"]
 
-h1 Bienvenido a nuestra página Taco
-p Esta es una landing optimizada para SEO.
-h2 Haz click, ahora ya no, ahora si
-h4 holaaaaa
-p hello
-h1 ya se pudo
+h1[class="w-10", id="title"] Bienvenido a nuestra página creada con tacos
+
 ```
 
 This will generate the following HTML:
@@ -61,16 +57,11 @@ This will generate the following HTML:
 <html lang="es">
 <head>
   <title>Mi Landing Taco</title>
-  <meta name="description" content="Ejemplo de Taco para SEO">
+  <meta name="description" content="Ejemplo de Tacos para SEO">
   <meta property="og:url" content="https://mi-sitio.com">
 </head>
 <body>
-  <h1>Bienvenido a nuestra página Taco</h1>
-  <p>Esta es una landing optimizada para SEO.</p>
-  <h2>Haz click, ahora ya no, ahora si</h2>
-  <h4>holaaaaa</h4>
-  <p>hello</p>
-  <h1>ya se pudo</h1>
+  <h1>Bienvenido a nuestra página creada con tacos</h1>
 </body>
 </html>
 ```

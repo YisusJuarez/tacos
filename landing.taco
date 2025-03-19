@@ -1,4 +1,3 @@
 page[title: "Mi Landing Taco", description: "Ejemplo de Taco para SEO", url: "https://mi-sitio.com"]
 
 h1[class="w-10", id="title"] Bienvenido a nuestra página creada con tacos
-h2 hola caleb
