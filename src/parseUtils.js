@@ -1,18 +1,40 @@
-// Parse page metadata (title, description, url)
-export function parsePageMeta(line) {
-  const meta = line.match(/title: "(.*?)", description: "(.*?)", url: "(.*?)"/);
-  if (!meta) return "";
+export function parsePageMeta(tacoLine) {
+  const metaMatch = tacoLine.match(
+    /title: "(.*?)", description: "(.*?)", url: "(.*?)"/
+  );
+  if (!metaMatch) return "";
 
-  const [, title, description, url] = meta;
+  const [, pageTitle, pageDescription, pageUrl] = metaMatch;
   return `
-      <title>${title}</title>
-      <meta name="description" content="${description}">
-      <meta property="og:url" content="${url}">
+      <title>${pageTitle}</title>
+      <meta name="description" content="${pageDescription}">
+      <meta property="og:url" content="${pageUrl}">
     `.trim();
 }
 
-// Parse individual elements (h1, p, etc.)
-export function parseElement(line, tag) {
-  const content = line.replace(`${tag} `, "");
-  return `<${tag}>${content}</${tag}>`;
+export function parseElement(tacoLine, htmlTag) {
+  const attributeMatch = tacoLine.match(/\[(.*?)\]/);
+  if (!attributeMatch) return `<${htmlTag}>${tacoLine}</${htmlTag}>`;
+
+  const [, attributeString] = attributeMatch;
+
+  const elementContent = tacoLine.replace(
+    `${htmlTag}[${attributeString}] `,
+    ""
+  );
+  return `<${htmlTag} ${parseHtmlAttributes(
+    attributeString
+  )}>${elementContent}</${htmlTag}>`;
 }
+
+const parseHtmlAttributes = (attributeString) => {
+  const attributesList = attributeString.split(",");
+  let htmlAttributes = "";
+
+  attributesList.forEach((attribute) => {
+    const [attributeName, attributeValue] = attribute.split("=");
+    htmlAttributes += `${attributeName}=${attributeValue}`;
+  });
+
+  return htmlAttributes;
+};
