@@ -1,5 +1,4 @@
-# Tacos Static Site Generator
-
+# 🌮 Tacos Static Site Generator
 Taco is a simple Static Site Generator (SSG) that allows you to create static HTML pages from custom `.taco` files. It supports dynamic compilation and live reloading during development, making it easy to build and preview your static sites.
 
 ## Features
