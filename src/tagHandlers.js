@@ -1,20 +1,35 @@
 import { parseElement, parsePageMeta } from "./parseUtils.js";
 
+// Document metadata handlers
 export const headTags = {
+  // Page configuration
+  "page[": parsePageMeta,
+  
+  // Document head elements
   title: (line) => parseElement(line, "title"),
   meta: (line) => parseElement(line, "meta"),
   link: (line) => parseElement(line, "link"),
   script: (line) => parseElement(line, "script"),
-  "page[": parsePageMeta,
-}
+};
+
+// Content element handlers
 export const tagHandlers = {
-  h1: (line) => parseElement(line, "h1"),
-  h2: (line) => parseElement(line, "h2"),
-  h3: (line) => parseElement(line, "h3"),
-  h4: (line) => parseElement(line, "h4"),
-  h5: (line) => parseElement(line, "h5"),
-  h6: (line) => parseElement(line, "h6"),
+  // Heading elements
+  ...Array.from({ length: 6 }, (_, i) => i + 1).reduce((acc, level) => ({
+    ...acc,
+    [`h${level}`]: (line) => parseElement(line, `h${level}`)
+  }), {}),
+
+  // Text elements
   p: (line) => parseElement(line, "p"),
+  
+  // Container elements
   div: (line) => parseElement(line, "div"),
   span: (line) => parseElement(line, "span"),
+};
+
+// Export all handlers as a single object for convenience
+export const allHandlers = {
+  ...headTags,
+  ...tagHandlers
 };
